@@ -1,0 +1,46 @@
+def currentVersion
+
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Debug info') {
+            steps {
+                script {
+                    sh 'docker --version'
+                    sh 'aws --version'
+                }
+            }
+        }
+
+        stage ('Setup version') {
+            steps{
+                script {
+                    currentVersion = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim().substring(0,6)
+                    sh "echo Building version ${currentVersion}"
+                }
+            }
+
+        }
+
+        stage('Build + Push to ECR') {
+            steps {
+                script {
+                    sh "./ci/build.sh ${currentVersion}"
+               }
+            }
+        }
+
+        stage('Deploy to ECS') {
+            steps {
+                script {
+                    sh "./ci/deploy.sh ${currentVersion} experiment-nginx:${currentVersion}"
+                }
+            }
+        }
+
+    }
+
+}
