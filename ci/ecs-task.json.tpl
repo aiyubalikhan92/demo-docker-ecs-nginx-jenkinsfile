@@ -1,5 +1,5 @@
 {
-  "requiresCompatibilities": [
+  sh "requiresCompatibilities": [
     "FARGATE"
   ],
     "containerDefinitions": [
