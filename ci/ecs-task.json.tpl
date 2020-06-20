@@ -1,5 +1,5 @@
 {
-    "family": "newweb-experiment",
+    "family": "newweb-experiment-nginx",
     "cpu": "256",
     "memory": "512",
     "requiresCompatibilities": ["FARGATE"],
