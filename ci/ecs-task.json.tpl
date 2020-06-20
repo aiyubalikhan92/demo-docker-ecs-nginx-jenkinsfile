@@ -1,7 +1,7 @@
 {
     
-    "cpu" "1 vCPU",
-    "memory": "512",
+    "cpu": "0.5 vCPU",
+    "memory": "1GB",
     "requiresCompatibilities": ["FARGATE"],
     "networkMode": "awsvpc",
     "executionRoleArn": "arn:aws:iam::208050583360:role/ecsTaskExecutionRole",
