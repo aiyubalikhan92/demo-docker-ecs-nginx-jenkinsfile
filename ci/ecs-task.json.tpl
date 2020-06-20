@@ -1,13 +1,7 @@
 {
-    "family": "",
-    "cpu": "256",
-    "memory": "1GB",
-    "requiresCompatibilities": ["FARGATE"],
-    "networkMode": "awsvpc",
-    "executionRoleArn": "arn:aws:iam::208050583360:role/ecsTaskExecutionRole",
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
     "containerDefinitions": [
     {
         "cpu": 256,
