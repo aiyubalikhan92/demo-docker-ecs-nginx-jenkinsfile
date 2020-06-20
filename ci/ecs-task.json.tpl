@@ -1,6 +1,6 @@
 {
-    
-    "cpu": "0.5 vCPU",
+    "family": "fargate-task-definition",
+    "cpu": "256",
     "memory": "1GB",
     "requiresCompatibilities": ["FARGATE"],
     "networkMode": "awsvpc",
