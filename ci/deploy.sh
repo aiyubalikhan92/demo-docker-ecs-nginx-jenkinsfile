@@ -9,7 +9,7 @@ APP_SPEC_FILE="appspec-$VERSION.json"
 # parse & publish task definition
 source ./ci/ecs-task.json
 source ./ci/ecs-task.json.tpl
-envsubst < "/ci/ecs-task.json.tpl" > "/ci/ecs-task.json"
+envsubst < "./ci/ecs-task.json.tpl" > "./ci/ecs-task.json"
 export TASK_DEFINITION_ARN=`aws ecs register-task-definition --cli-input-json file://ci/ecs-task.json --region eu-west-1 | jq -r .taskDefinition.taskDefinitionArn`
 
 # parse & publish deployment definition
