@@ -1,5 +1,5 @@
 {
-    "family": "fargate-task-definition",
+    "family": "",
     "cpu": "256",
     "memory": "1GB",
     "requiresCompatibilities": ["FARGATE"],
