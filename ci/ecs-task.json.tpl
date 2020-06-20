@@ -1,32 +1,34 @@
 {
-  sh "requiresCompatibilities": [
+  "requiresCompatibilities": [
     "FARGATE"
   ],
-    "containerDefinitions": [
+  "containerDefinitions": [
     {
-        "cpu": 256,
-        "memory": 512,
-        "name": "newweb-experiment-nginx",
-        "image": "${IMAGE_URL}",
-        "essential": true,
-        "portMappings": [
-            {
-                "containerPort": 80,
-                "protocol": "tcp",
-                "hostPort": 80
+      "name": "nginx",
+      "image": "nginx:latest",
+      "memory": 256,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration":{
+            "logDriver":"awslogs",
+            "options":{
+               "awslogs-group":"awslogs-nginx-ecs",
+               "awslogs-region":"us-east-1",
+               "awslogs-stream-prefix":"ecs"
             }
-        ],
-        "environment": [
-            {
-                "name": "ENV",
-                "value": ""
-            },
-            {
-                "name": "PORT",
-                "value": "3000"
-            }
-        ]
+      }
     }
-]
-}
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "placementConstraints": [],
+  "family": "nginx",
+  "memory": "512",
+  "cpu": "256"
 }
