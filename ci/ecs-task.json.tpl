@@ -1,6 +1,6 @@
 {
     
-    "cpu": "256",
+    "cpu": "1 vCPU",
     "memory": "512",
     "requiresCompatibilities": ["FARGATE"],
     "networkMode": "awsvpc",
