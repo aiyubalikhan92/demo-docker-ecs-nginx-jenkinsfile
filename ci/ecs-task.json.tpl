@@ -1,5 +1,5 @@
 {
-    "family": "nginx",
+    
     "cpu": "256",
     "memory": "512",
     "requiresCompatibilities": ["FARGATE"],
